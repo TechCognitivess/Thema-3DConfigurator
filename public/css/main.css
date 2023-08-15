@@ -1,0 +1,834 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+
+}
+
+  
+
+
+.scene {
+    width: 100%;
+    height: 74vh;
+}
+
+
+#conatiner_box {
+    position: relative;
+}
+
+
+
+.top-bar {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height: 60px;
+    /* Adjusted height for better visibility */
+    padding: 0 20px;
+    /* Added padding for spacing */
+}
+
+/* Additional styles for the icons and buttons would go here */
+
+
+.top-bar h4 {
+    margin: 0;
+    font-size: 500;
+}
+
+.wishlist_btn,
+.cart_btn,
+.login_btn {
+    display: flex;
+    margin-right: 43px;
+    /* margin: 5px;
+    padding: 10px; */
+}
+
+.top-bar i {
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.top_right {
+    display: inline-flex;
+}
+
+
+/**********************************dropdown***********/
+
+
+
+.dropdown{
+    display: flex;
+}
+.dropdown-content {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+    display: none;
+    display: block;
+    /* left: 25px; */
+    z-index: -1;
+    /* top: 25px;
+}
+
+.dropdown-content li {
+    border-top-color: white !important;
+
+}
+
+.dropdown ul {
+    padding-left: 0;
+    width: 150px;
+    background-color: white;
+    background: white;
+    margin-top: 15px;
+    /* border: 1px solid gray; */
+}
+
+.dropdown ul li {
+    border-radius: 0% !important;
+    background-color: white !important;
+    padding: 8px !important;
+    border: 1px solid gray;
+    color: none;
+}
+
+.dropdown .dropdown-content ul li {
+    display: block !important;
+    padding: 0;
+    background-color: white;
+
+}
+
+.dropdown .dropdown-content img {
+    display: inline;
+    /* height: 68px; */
+    background-color: white;
+    /* display: flex; */
+    padding: 18px;
+    width: 52%;
+    border-bottom: 1px solid #cccccc;
+}
+
+.dropdown-content img {
+    width: 100px;
+}
+
+.customized_tabs .dropdown-content ul li {
+    background-color: white !important;
+}
+
+.customized_tabs>ul:nth-child() {
+    display: block;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 0;
+    height: 35px;
+    margin-top: 0;
+    /* padding-top: 5px; */
+    /* max-width: 100%; */
+    /* width: 65%; */
+    border-radius: 25px;
+    /* margin: 15px; */
+
+}
+
+
+.dropdown {
+    /* display: block; */
+    background: white;
+    border: 1px solid #aaa;
+    padding: 0;
+    height: 35px;
+    margin-top: 0;
+    /* padding-top: 5px; */
+    /* max-width: 100%; */
+    /* width: 65%; */
+    border-radius: 25px;
+    /* margin: 15px; */
+
+}
+
+.customized_tabs ul li:hover {
+    background-color: black;
+    color: green;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.5s ease;
+}
+
+.customized_tabs ul {
+    margin: 0 !important;
+    /* padding-left: 0; */
+    /* border: 1px solid #aaa; */
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    text-align: center;
+    display: flex;
+    background: #ffffff;
+
+}
+
+.customized_tabs ul li {
+    flex: 1;
+    list-style: none;
+    color: white;
+    text-transform: uppercase;
+    /* margin: 0px 20px; */
+    font-size: 20px;
+    padding: 8px 5px;
+    font-weight: 400;
+    text-align: center;
+    background: #aaa;
+    /* height: 20px; */
+    /* border: 1px solid red; */
+    border-radius: 25px;
+
+}
+
+hr {
+    margin: 0;
+}
+
+.customized_tabs .active,
+.dropdown .active {
+    background-color: black;
+    color: green;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.customized_tabs li,
+.dropdown li {
+    display: inline-block;
+    padding: 10px;
+    /* background-color: lightgray; */
+    cursor: pointer;
+}
+
+
+.feature_boxes {
+    border-top-left-radius: 15px;
+    /* box-shadow: 0px -1px 4px 3px green; */
+    background-color: white;
+}
+
+/* .feature_boxes .feature_box {
+    /* display: none; */
+/* font-size: 35px; */
+
+
+.feature_boxes span {
+    color: Red;
+}
+
+.left_bottom {
+    /* width: 65%; */
+    /* background: #ddd; */
+    display: flex;
+    justify-content: space-between;
+    /* padding: 10px;
+    margin-bottom: 20px; */
+}
+
+.iGreen_Logo img {
+    width: 125px;
+}
+
+.main_container {
+    display: flex;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.left_screen {
+    max-width: 60%;
+    padding-left: 25px;
+    width: 100%;
+}
+
+
+/******************/
+
+.frame_list img {
+    width: 145px;
+    box-shadow: 0px 5px 5px #888888;
+    margin: 5px;
+    background-color: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.select_color img {
+    width: 145px;
+    box-shadow: 0px 5px 5px #888888;
+    margin: 5px;
+    background-color: white;
+    padding: 7px;
+    border-radius: 5px;
+    display: grid;
+
+}
+
+.feature_box {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.frame_list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* height: 600px; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.product_list img:hover {
+    box-shadow: 0px 5px 5px green;
+
+}
+
+
+.select_color img:hover {
+    box-shadow: 0px 5px 5px green;
+
+}
+
+/************************FRONTS SEARCH BOX******************/
+#frontTab,
+#colorTab,
+#templesTab,
+#lensesTab {
+    display: grid;
+    grid-template-columns: auto auto;
+
+
+}
+
+.search_tabs {
+    /* display: grid; */
+    color: #ffffff;
+    padding: 12px;
+    /* border-radius: 5px; */
+    border-top-left-radius: 15px;
+    border-bottom: 1px solid #ffffff;
+    background-color: black;
+
+}
+
+input[type="search"] {
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.search_bar {
+    position: relative;
+}
+
+.search_bar input[type="search"] {
+    padding-right: 30px;
+    color: white !important;
+}
+
+::placeholder {
+    color:#ffffff;
+
+
+}
+
+.search_bar i {
+    position: absolute;
+    top: 38%;
+    right: 30px;
+    font-size: 17px;
+
+    transform: translateY(-50%);
+}
+
+#searchBar {
+    background-repeat: no-repeat;
+    background-position: 245px 9px;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 95%;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    margin-bottom: 12px;
+    background-size: 15px;
+    background-color: black;
+}
+
+
+
+.type_tab button {
+    background-color: white;
+    color: green;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.type_tab button#sunglasses.active {
+    background-color: white;
+    color: green;
+    margin: 3px;
+}
+
+.type_tab button#eyeglasses.active {
+    background-color: white;
+    color: green;
+    margin: 3px;
+}
+
+.type_tab {
+    display: none;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    height: 36px;
+}
+
+.type_tab button {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+}
+
+.size_tab label,
+.fishing_tab label,
+.material_type label,
+.materials_colorlabel,
+.finsh_type label,
+.material_size label,
+.engraving_type label {
+    margin-right: 8px;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+
+.size_tab,
+.fishing_tab,
+.material_type,
+.materials_color,
+.finsh_type,
+.material_size {
+    height: 38px;
+}
+
+.size_btn button,
+.finishing_type button,
+.material_list button,
+.material_cold button,
+.finsh_list button,
+.size_number button,
+.plastic_size button,
+.engraving_sides button {
+    border: 3px solid #000000;
+    background: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    height: 36px;
+    padding: 0 13px;
+    border-radius: 25px;
+
+}
+
+.size_btn,
+.finishing_type,
+.material_list,
+.material_cold,
+.finsh_list,
+.size_number,
+.engraving_sides {
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+}
+
+.size_btn .active,
+.finishing_type .active,
+.material_list .active,
+.material_cold .active,
+.finsh_list .active,
+.size_number .active,
+.engraving_sides .active {
+    background-color: #ffffff;
+    color: green;
+}
+
+.fishing_tab label {
+    margin-right: 3px;
+}
+
+.finishing_type button {
+    padding: 0 5px;
+
+}
+
+.finishing_type {
+    max-width: 195px;
+
+}
+
+
+.nose-pad {
+    width: 100%;
+}
+
+.nose_tab label {
+    white-space: nowrap;
+    padding: 12px 0;
+}
+
+/**********************Colors Tab CSS**********************/
+
+.choose_color {
+    border-radius: 25px;
+    position: relative;
+    height: 38px;
+    border: none;
+    border: 1px solid white;
+    text-align: center;
+}
+
+
+.choose_color ::placeholder {
+    color: white;
+    font-weight: 700;
+}
+
+
+.choose_color select {
+    background-color: black;
+    color: white;
+    /* border: 1px solid #ccc; */
+    border: none;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    padding-top: 2px;
+    padding-left: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 6px;
+    appearance: none;
+    /* Remove default arrow in modern browsers */
+    background: none;
+}
+
+.choose_color i {
+    position: absolute;
+    top: 25%;
+    right: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.choose_color select:focus {
+    outline: none;
+}
+
+/******************************** temples CSS****************/
+#templesTab button {
+    text-transform: uppercase;
+}
+
+.material_type {
+    margin-bottom: 12px;
+}
+
+.material_list,
+.material_cold,
+.finsh_list,
+.size_number {
+    max-width: 170px;
+}
+
+.material_cold {
+    max-width: 130px;
+}
+
+.size_number {
+    max-width: 53px;
+}
+
+.plastic {
+    max-width: 211px;
+}
+
+.finsh_list {
+    max-width: 139px;
+}
+
+/********************************ENGRAVING CSS ******************/
+
+.image-container img {
+    width: 300px;
+    display: block;
+    margin: auto;
+    /* padding: 10px 0; */
+}
+
+.engarving-container {
+    text-align: center;
+    /* background-color: #fff; */
+    /* padding: 20px; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.text-overlay {
+
+    position: absolute;
+    top: 20%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    /* font-weight: bold; */
+    color: green;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    rotate: 120ge;
+    rotate: -17deg;
+    text-transform: uppercase;
+}
+
+.engraving_sides {
+    max-width: 349px;
+    margin-left: 35px;
+}
+
+.engraving_type {
+    margin-bottom: 12px;
+}
+
+.cutomed-name input[type="text"] {
+    background-color: black;
+    width: 100%;
+    max-width: 65%;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 19px;
+    padding-right: 30px;
+    color: white !important;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.cutomed-name label {
+    white-space: nowrap;
+}
+
+.custom-name {
+    display: flex;
+    align-items: center;
+}
+
+.max-characters-label {
+    display: block;
+    margin-top: 4px;
+    /* font-size: 10px; */
+    color: gray;
+    text-align: center;
+    margin-left: 15px;
+    padding-right: 125px;
+}
+
+#engravingTab p {
+    font-size: 8px;
+}
+
+
+
+/***********************************************/
+.right_bar {
+    position: relative;
+    box-shadow: -2px -2px 4px 1px green;
+    background-color: black;
+    height: auto;
+    max-width: 35%;
+    width: 100%;
+    margin-left: 5%;
+    /* padding-top: 13px; */
+    border-top-left-radius: 15px;
+    /* padding-left: 10px; */
+}
+
+.arrow button {
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    font-size: 50px;
+}
+
+.AddCart_btn button {
+    padding: 10px;
+    /* margin-right: 15px; */
+    /* background: #ddd; */
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.shotIcons button {
+    border: none;
+    font-size: 25px;
+    background: none;
+    margin: 5px;
+}
+
+.theme_link img {
+    width: 90px;
+}
+
+.leftSemi_bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#toggleButton {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -28px;
+    /* background: none!important; */
+    /* border: 1px solid #ccc; */
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    z-index: -1;
+}
+
+#toggleButton i {
+    color: green;
+    background: none !important;
+    font-size: 28px;
+
+}
+
+/************************/
+
+.content {
+    max-height: 800px;
+    overflow-y: visible;
+}
+
+.read-more-btn {
+    background: antiquewhite;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 40px;
+    margin: 30px;
+}
+
+#frontTab label{
+    padding-right: 5px;
+    color: #ffffff;
+}
+#frontTab form{
+    padding: 7px 3px;
+}
+
+.size_btn .second, .size_btn .first{
+    border-right: 1px solid #ffffff;
+
+}
+
+
+.slideview-switch .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+ .slideview-switch .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slideview-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slideview-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slideview-switch input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  .slideview-switch input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .slideview-switch input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slideview-switch .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slideview-switch .slider.round:before {
+    border-radius: 50%;
+  }
+  .slideview-switch .nose-pad-txt{
+    padding: 8px 8px;
+  }
+  .dropdown{
+    position: relative;
+  }

@@ -1,0 +1,24 @@
+
+.sidebarView{
+    display: none;
+}
+.sidebarView.active{
+    display: block;
+}
+.frame_list img.engravingtemple{
+    width: 100%;
+    box-shadow: none;
+}
+.gridView .outer-grid.eyeglasses, .gridView .outer-grid.sunglasses{
+    display: none;
+}
+.gridView .outer-grid.eyeglasses.active, .gridView .outer-grid.sunglasses.active{
+    display: flex;
+}
+.search_tabs{
+    position: absolute;
+    width: 100%;
+}
+.gridView{
+    margin-top: 25%;
+}
