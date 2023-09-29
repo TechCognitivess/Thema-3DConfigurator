@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: visible;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 65%;
+            border-radius: 5px;
+        }
+
+        .brands_container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            height: 450px;
+
+        }
+
+        .brand_logo img {
+            width: 150px;
+            height: 50px;
+        }
+
+        .brand_logo {
+            height: 83px;
+        }
+
+        .brand_info {
+            /* background-color: green; */
+            padding: 8px;
+            height: 285px;
+        }
+
+        .brand_info p {
+
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            line-height: 35px;
+        }
+
+        .list_of_brands {
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px;
+            background-color: #aaaaaa;
+            box-shadow: 7px 3px 6px 1px #888888;
+            background-color: white;
+            padding-top: 5px;
+            /* For browsers that do not support gradients */
+            /* background-image: linear-gradient(135deg, green, black); */
+        }
+
+        #igreen .brand_info {
+            background-image: linear-gradient(187deg, green, black) !important;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+
+
+        }
+
+        #osix .brand_info {
+            background-image: linear-gradient(187deg, red, black) !important;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+
+
+        }
+
+        #GiorgioValmassoi .brand_info {
+            background-image: linear-gradient(187deg, gray, black) !important;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+
+
+        }
+
+        .brand_logo,
+        .custom_text {
+            background-color: white
+        }
+
+        .custom_text {
+            display: flex;
+            justify-content: center;
+        }
+
+        .custom_text img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .custom_text h6 {
+            margin: 0;
+            margin-top: 3px;
+        }
+
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #myBtn {
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <h2>Brands List</h2> -->
+
+    <button id="myBtn">BRANDS</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" style="margin-right: 20px;">&times;</span>
+            <p style="font-size: 30px;
+            color: #aaa;
+            margin: 0;
+            margin-left: 20px;
+           ">Choose your favorite Brand</p>
+
+            <div class="brands_container">
+                <div class="list_of_brands" id="igreen">
+                    <a href="/home">
+                        <div class="brand_logo">
+                            <!-- <a href="/home"> -->
+                            <img src="img/logo.jpeg" alt="">
+
+                        </div>
+                        <div class="custom_text">
+                            <img src="img/cutomized_btn.png" alt="cutomized Button">
+                            <h6>
+                                CUSTOMIZE
+                            </h6>
+                        </div>
+                        <div class="brand_info">
+                            <p>
+                                Our bio-based frames are crafted using acetate derived from natural cotton fibers and a
+                                special polymer obtained from castor seed oil, making them lightweight, comfortable- and
+                                sustainable
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-------------------------->
+
+                <div class="list_of_brands" id="osix">
+                    <a href="/o-six">
+                        <div class="brand_logo">
+                            <img src="img/OsixLogo.png" alt="" >
+
+
+                        </div>
+                        <div class="custom_text">
+                            <img src="img/cutomized_btn.png" alt="cutomized Button">
+
+                            <h6>
+
+
+                                CUSTOMIZE
+                            </h6>
+                        </div>
+                        <div class="brand_info">
+                            <p>
+                                Striking the perfect balance between modern designs and impeccable craftsmanship,
+                                stylish
+                                yet extremely comfortable eyeglasses.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-------------------------->
+
+                <div class="list_of_brands" id="GiorgioValmassoi">
+                    <a href="/giorgio">
+                        <div class="brand_logo">
+                            <img src="img/gvLogo.jpg" alt="">
+
+                        </div>
+                        <div class="custom_text">
+                            <img src="img/cutomized_btn.png" alt="cutomized Button">
+
+                            <h6>
+                                CUSTOMIZE
+                            </h6>
+                        </div>
+                        <div class="brand_info">
+                            <p>
+                                Classic and contemporary styles for men or women. Only the finest materials are used in
+                                each
+                                creation.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+
+        var btn = document.getElementById("myBtn");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

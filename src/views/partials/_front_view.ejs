@@ -1,5 +1,5 @@
 <div id="frontBoxTab" class="sidebarView feature_boxes left_main_container active">
-
+  
     <!-----------------------------FRONT----------------------------------------------------->
     <div id="frontBox " class="feature_box frame_list content" style="display: block;">
 
@@ -11,13 +11,13 @@
                     <input type="search" id="searchBar" placeholder="Seach Models"><i
                         class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div class="type_tab" style="display: flex;">
-                    <button id="eyeglasses" class="active" onclick="activateTab('eyeglasses')">Eyeglasses</button>
-                    <button id="sunglasses" onclick="activateTab('sunglasses')">Sunglasses</button>
+                <div class="type_tab osixText VG" style="display: flex;">
+                    <button id="eyeglasses" class="active">Eyeglasses</button>
+                    <button id="sunglasses">Sunglasses</button>
                 </div>
                 <div class="size_tab" style="display: flex;">
                     <label>SIZE</label>
-                    <div class="size_btn">
+                    <div class="size_btn osixText">
                         <button class="active">45/49</button>
                         <button>52/54</button>
                         <button>51/52</button>
@@ -26,9 +26,9 @@
                 </div>
                 <div class="nose_tab" style="display: flex;">
                     <label>NOSE-PAD</label>
-                    <div class="nose-pad type_tab" style="display: flex;">
-                        <button id="eyeglasses" class="active">NO</button>
-                        <button id="sunglasses">YES</button>
+                    <div class="nose-pad type_tab osixText" style="display: flex;">
+                        <button id="" class="active">NO</button>
+                        <button id="">YES</button>
 
                     </div>
 
@@ -36,26 +36,44 @@
             </div>
 
         </div>
-        <div class="gridView" id="imageContainer">
-            <!-- <img src="/img/IG4.164C.png" alt="Image for 45/49"><img src="/img/IG4.161C.png"
-                alt="Image for 45/49"><img src="/img/IG4.162C.png" alt="Image for 45/49"><img
-                src="/img/IG4.165C.png" alt="Image for 45/49"><img src="/img/IG4.166C.png"
-                alt="Image for 45/49"><img src="/img/IG4.164C.png" alt="Image for 45/49"> -->
+        <div class="gridView o-six" id="imageContainer">
+
             <div class="outer-grid">
                 <div class="inner-grid">
-                    <img src="/img/IG4.164C.png" data="0"/>
-                    <img src="/img/IG4.164C.png" data="0"/>
-                    <img src="/img/IG4.164C.png" data="0"/>
+                    <% if(articles != null) { %>
+                        <% articles.forEach(function(article, index) { %>
+                            <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
+                            alt="<%- article.Code %>" data="0" />
+                        <% }) %>
+                        <% } else { %>
+                        No posts found.
+                        <% } %>
+
+
                 </div>
                 <div class="inner-grid">
-                    <img src="/img/IG4.164C.png" data="1"/>
-                    <img src="/img/IG4.164C.png" data="1"/>
-                    <img src="/img/IG4.164C.png" data="1"/>
+                    <% if(articles != null) { %>
+                        <% articles.forEach(function(article, index) { %>
+                            <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
+                            alt="<%- article.Code %>" data="0" />
+                        <% }) %>
+                        <% } else { %>
+                        No posts found.
+                        <% } %>
+
+
                 </div>
                 <div class="inner-grid">
-                    <img src="/img/IG4.164C.png" data="0"/>
-                    <img src="/img/IG4.164C.png" data="0"/>
-                    <img src="/img/IG4.164C.png" data="0"/>
+                    <% if(articles != null) { %>
+                        <% articles.forEach(function(article, index) { %>
+                            <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
+                            alt="<%- article.Code %>" data="0" />
+                        <% }) %>
+                        <% } else { %>
+                        No posts found.
+                        <% } %>
+
+
                 </div>
 
             </div>

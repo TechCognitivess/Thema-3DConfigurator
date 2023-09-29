@@ -1,100 +1,407 @@
-    <div id="colorBoxTab" class="sidebarView feature_boxes left_main_container">
+<style>
+    /* Basic styling for the custom dropdown */
+    .custom-dropdown {
+        display: inline-block;
+        position: relative;
+        background-color: white;
+        border-radius: 25px;
+        height: 30px;
 
-        <!-----------------------------FRONT----------------------------------------------------->
-        <div id="frontBox " class="feature_box frame_list content" style="display: block;">
+    }
 
-            <div class="search_tabs">
+    .custom-dropdown .dropdown-toggle {
+        /* border: 1px solid #ccc; */
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-                <div id="frontTab">
+    .custom-dropdown .dropdown-toggle .arrow-icon {
+        transition: transform 0.2s ease-in-out;
+        position: absolute;
+        top: 27%;
+        right: 20px;
+    }
+
+    .custom-dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .custom-dropdown .dropdown-content a {
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+
+    .custom-dropdown .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .rotate-down .arrow-icon {
+        transform: rotate(180deg);
+    }
+
+    /* Styling for the custom input-like box */
+    .custom-input-box {
+        display: inline-block;
+        /* border: 1px solid #ccc; */
+        border-radius: 4px;
+        padding: 5px 10px;
+        /* margin-top: 5px; */
+        /* background-color: white; */
+        /* width: 150px; */
+        overflow: hidden;
+    }
+
+    .selected-color span:hover {
+        background-color: red;
+        /* border-radius: 25px; */
+    }
+
+    .selected-color-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+
+        /* margin-top: 5px; */
+        /* border: 1px solid black; */
+        /* background: white; */
+        border-radius: 25px;
+        /* height: 30px; */
+    }
+
+    .selected-color {
+        /* background-color: #ccc; */
+        align-items: center;
+        border-radius: 4px;
+        padding: 0px 5px;
+        margin: 2px;
+        display: flex;
+        position: relative;
+        font-size: 11px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .selected-color-close {
+        font-size: 8px;
+        cursor: pointer;
+        color: black;
+        background-color: #ff6666;
+        display: block;
+        color: white;
+        border-radius: 50%;
+        /* margin-left: 2px; */
+        /* Hide the close button by default */
+    }
+
+    .selected-color-close i {
+        margin-left: 2px;
+    }
+
+    .selected-color-close {
+        width: 10px;
+        height: 10px;
+    }
+
+    #brandBtn.navigation.activeTick::before {
+        left: 22%;
+    }
+
+    /* .scene {
+    transition: transform 1s;
+    transform: scale(1.5);
+    background-color: yellow;
+    } */
+    /* .scene {
+    transition: transform 1s;
+    background-color: yellow;
+
+} */
+    .scene {
+        margin-top: 8%;
+        transform: scale(1);
+        transition: transform 1s;
+    }
+
+    .scene.active {
+        transform: scale(0.9);
+    }
+</style>
+
+
+<div id="colorBoxTab" class="sidebarView feature_boxes left_main_container">
+    <!-----------------------------FRONT----------------------------------------------------->
+
+    <div id="frontBox " class="feature_box frame_list content" style="display: block;">
+
+        <div class="search_tabs">
+            <div id="colorsTabBar">
+                <div class="colorBar">
 
                     <div class="search_bar">
-                        <input type="search" id="searchBar" placeholder="Seach Models"><i
+                        <input type="search" id="searchBar" placeholder="Search Colors"><i
                             class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div class="type_tab" style="display: flex;">
-                        <button id="eyeglasses" class="active">Eyeglasses</button>
-                        <button id="sunglasses">Sunglasses</button>
-                    </div>
-                    <div class="size_tab" style="display: flex;">
-                        <label>SIZE</label>
-                        <div class="size_btn">
-                            <button class="active">45/49</button>
-                            <button>52/54</button>
-                            <button>51/52</button>
 
+                    </div>
+                    <div class="custom-dropdown" id="customDropdown">
+                        <div class="dropdown-toggle" onclick="toggleDropdown()">
+                            <div class="custom-input-box" id="selectedColors">
+                                <input type="text" placeholder="Choose Categories" id="colorInput">
+                            </div>
+                            <i class="fa-solid fa-angle-down arrow-icon"></i>
+                        </div>
+                        <div class="dropdown-content" id="colorOptions"
+                            style="height: 155px; overflow: auto; margin-left: 10px; margin-right: 78px; max-width: 203px;">
+                            <a onclick="selectColor('Bicolori')">Bicolori</a>
+                            <a onclick="selectColor('Havana')">Havana</a>
+                            <a onclick="selectColor('Multistrato')">Multistrato</a>
+                            <a onclick="selectColor('Marmorizzati')">Marmorizzati</a>
+                            <a onclick="selectColor('Traslucidi')">Traslucidi</a>
+                            <a onclick="selectColor('Multilayer')">Multilayer</a>
+                            <a onclick="selectColor('Glitter')">Glitter</a>
+                            <a onclick="selectColor('Solidi')">Solidi</a>
                         </div>
                     </div>
-                    <div class="nose_tab" style="display: flex;">
-                        <label>NOSE-PAD</label>
-                        <div class="nose-pad type_tab" style="display: flex;">
-                            <button id="eyeglasses" class="active">NO</button>
-                            <button id="sunglasses">YES</button>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="gridView" id="imageContainer">
-                <!-- <img src="/img/Colors/PL0982.jpg" alt="Image for 45/49"><img src="/img/IG4.161C.png"
-                    alt="Image for 45/49"><img src="/img/IG4.162C.png" alt="Image for 45/49"><img
-                    src="/img/IG4.165C.png" alt="Image for 45/49"><img src="/img/IG4.166C.png"
-                    alt="Image for 45/49"><img src="/img/Colors/PL0982.jpg" alt="Image for 45/49"> -->
-                <div class="outer-grid eyeglasses active">
-                    <!-- <div class="inner-grid">
-                        <img src="/img/Colors/PL0983.jpg" />
-                        <img src="/img/Colors/PL0983.jpg" />
-                        <img src="/img/Colors/PL0983.jpg" />
-                    </div>
-                    <div class="inner-grid">
-                        <img src="/img/Colors/PL0982.jpg" />
-                        <img src="/img/Colors/PL0982.jpg" />
-                        <img src="/img/Colors/PL0982.jpg" />
-                    </div>
-                    <div class="inner-grid">
-                        <img src="/img/Colors/PL1012.jpg" />
-                        <img src="/img/Colors/PL1012.jpg" />
-                        <img src="/img/Colors/PL1012.jpg" />
-                    </div> -->
-                        <% if(articles != null) { %>
-                        <% articles.forEach(function(article, index) { %>
-                        <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-94a81.appspot.com/o/<%- article.Code %>.jpg?alt=media&token=e95137a4-07df-472b-b27c-b0148851cbbe"
-                            alt="<%- article.Code %>" data="0" />
-                        <% }) %>
-                        <% } else { %>
-                        No posts found.
-                        <% } %>
-
-                </div>
-                <div class="outer-grid sunglasses">
-                    <!-- <div class="inner-grid">
-                        <img src="/img/Colors/PL0984.jpg" />
-                        <img src="/img/Colors/PL0984.jpg" />
-                        <img src="/img/Colors/PL0984.jpg" />
-                    </div>
-                    <div class="inner-grid">
-                        <img src="/img/Colors/PL0993.jpg" />
-                        <img src="/img/Colors/PL0993.jpg" />
-                        <img src="/img/Colors/PL0993.jpg" />
-                    </div>
-                    <div class="inner-grid">
-                        <img src="/img/Colors/PL1011.jpg" />
-                        <img src="/img/Colors/PL1011.jpg" />
-                        <img src="/img/Colors/PL1011.jpg" />
-                    </div> -->
-
-                    <% if(articles != null) { %>
-                    <% articles.forEach(function(article, index) { %>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-94a81.appspot.com/o/<%- article.Code %>.jpg?alt=media&token=e95137a4-07df-472b-b27c-b0148851cbbe"
-                        alt="<%- article.Code %>" data="0" />
-                    <% }) %>
-                    <% } else { %>
-                    No posts found.
-                    <% } %>
 
                 </div>
             </div>
+            <div>
+                <!-- <h2 id="selectedColorsLabel" style="display: none;">Selected Colors</h2> -->
+                <div class="selected-color-container" id="selectedColorContainer"></div>
+            </div>
+            <div class="colorBar">
+
+                <div class="size_tab" style="display: flex;">
+                    <label style="margin-right: 3px;">FINISHING</label>
+                    <div class="size_btn osixText">
+                        <button id="colorMatt">MATT</button>
+                        <button id="colorShiny" class="active">SHINY</button>
+                        <button id="colorNatural">NATURAL</button>
+                    </div>
+                </div>
+                <div class="nose_tab" style="display: flex;">
+                    <label>ECO COLOR</label>
+                    <div class="nose-pad type_tab osixText" style="display: flex;">
+                        <button id="NoEcoColor" class="active">NO</button>
+                        <button id="YesEcoColor">YES</button>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
     </div>
+    <div class="gridView o-six" id="imageContainer">
+        <!-- <img src="/img/Colors/PL0982.jpg" alt="Image for 45/49"><img src="/img/IG4.161C.png"
+                    alt="Image for 45/49"><img src="/img/IG4.162C.png" alt="Image for 45/49"><img
+                    src="/img/IG4.165C.png" alt="Image for 45/49"><img src="/img/IG4.166C.png"
+                    alt="Image for 45/49"><img src="/img/Colors/PL0982.jpg" alt="Image for 45/49"> -->
+
+        <div class="outer-grid NoEcoColor active">
+            <div class="inner-grid">
+                <img src="img/Colors/PL0982.jpg" />
+                <img src="img/Colors/PL0983.jpg" />
+                <img src="img/Colors/PL0984.jpg" />
+                <img src="img/Colors/PL0985.jpg" />
+                <img src="img/Colors/PL0987.jpg" />
+
+
+            </div>
+            <div class="inner-grid">
+                <img src="img/Colors/PL0988.jpg" />
+                <img src="img/Colors/PL0989.jpg" />
+                <img src="img/Colors/PL0990.jpg" />
+                <img src="img/Colors/PL0993.jpg" />
+                <img src="img/Colors/PL1011.jpg" />
+
+
+            </div>
+            <div class="inner-grid">
+                <img src="img/Colors/PL1012_b.jpg" />
+                <img src="img/Colors/PL1012.jpg" />
+                <img src="img/Colors/PL1015.jpg" />
+                <img src="img/Colors/PL0982.jpg" />
+                <img src="img/Colors/PL0983.jpg" />
+
+            </div>
+            <div class="inner-grid">
+                <img src="img/Colors/PL1012_b.jpg" />
+                <img src="img/Colors/PL1012.jpg" />
+                <img src="img/Colors/PL1015.jpg" />
+                <img src="img/Colors/PL0982.jpg" />
+                <img src="img/Colors/PL0983.jpg" />
+
+            </div>
+        </div>
+
+        <div class="outer-grid YesEcoColor">
+            <div class="inner-grid">
+                <img src="/img/Colors/PL0984.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="/img/Colors/PL0993.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="/img/Colors/PL1011.jpg" />
+            </div>
+
+        </div>
+    </div>
+
+    <div class="gridView o-six" id="MattContainer">
+        <div class="outer-grid  NoEcoColor active">
+
+            <div class="inner-grid">
+                <img src="img/Colors/PL0987.jpg" />
+
+            </div>
+            <div class="inner-grid">
+                <img src="img/Colors/EP0044.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="img/Colors/EP0028.jpg" />
+            </div>
+        </div>
+
+        <div class="outer-grid YesEcoColor">
+            <div class="inner-grid">
+                <img src="/img/Colors/PL0984.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="/img/Colors/PL0993.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="/img/Colors/PL1011.jpg" />
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="gridView o-six" id="NaturalContainer">
+        <div class="outer-grid  NoEcoColor active">
+            <h1>Natural colors</h1>
+
+        </div>
+
+        <div class="outer-grid YesEcoColor">
+            <div class="inner-grid">
+                <img src="/img/Colors/PL0984.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="/img/Colors/PL0993.jpg" />
+            </div>
+            <div class="inner-grid">
+                <img src="/img/Colors/PL1011.jpg" />
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<script>
+    // JavaScript functions for the custom dropdown
+    let isOpen = false;
+
+    function toggleDropdown() {
+        isOpen = !isOpen;
+        const dropdownContent = document.getElementById('colorOptions');
+        dropdownContent.style.display = isOpen ? 'block' : 'none';
+        const arrowIcon = document.querySelector('.arrow-icon');
+        arrowIcon.classList.toggle('rotate-down', isOpen);
+    }
+
+    function selectColor(color) {
+        const selectedColorsContainer = document.getElementById('selectedColorContainer');
+        const selectedColorsBox = document.getElementById('selectedColors');
+        const currentSelectedColors = selectedColorsBox.innerHTML;
+
+        // if (currentSelectedColors === 'Choose Color') {
+        //     selectedColorsBox.innerHTML = '';
+        // } else {
+        //     selectedColorsBox.innerHTML += ', ';
+        // }
+        // selectedColorsBox.innerHTML += color;
+
+        const selectedColorDiv = document.createElement('div');
+        selectedColorDiv.className = 'selected-color';
+        selectedColorDiv.innerHTML =
+            // `${color}<span class="selected-color-close" onclick="removeColor(this, '${color}')">x</span>`;
+            `${color}<span class="selected-color-close" onclick="removeColor(this, '${color}')"><i class="fa-solid fa-xmark"></i>
+</span>`;
+
+        // <i class="fa-solid fa-xmark"></i>
+        selectedColorsContainer.appendChild(selectedColorDiv);
+
+        const colorOption = document.querySelector(`a[onclick="selectColor('${color}')"]`);
+        if (colorOption) {
+            colorOption.style.display = 'none';
+        }
+
+        toggleDropdown();
+    }
+
+    function removeColor(closeButton, color) {
+        // Remove the color from the selected colors box
+        const selectedColorDiv = closeButton.parentElement;
+        selectedColorDiv.remove();
+
+        // Remove the comma before the color
+        const selectedColorsBox = document.getElementById('selectedColors');
+        selectedColorsBox.innerHTML = selectedColorsBox.innerHTML.replace(', ' + color, '');
+
+        // Show the color back in the dropdown options
+        const colorOption = document.querySelector(`a[onclick="selectColor('${color}')"]`);
+        if (colorOption) {
+            colorOption.style.display = 'block';
+
+        }
+
+        //    closeButton.style.fontSize = '12px'; 
+        // Add event listener to the search bar for filtering colors
+
+        const searchBar = document.getElementById('searchBar');
+        searchBar.addEventListener('input', function () {
+            filterColors(this.value);
+        });
+    }
+
+    /******************/
+</script>
+
+
+<!-- <script>
+    $(function () {
+        $("select").select2();
+        $("#HospitalName").change(function () {
+            var rel_ = $(this).find("option:selected").data("rel")
+            $("#DepartmentName").select2("val", ""); //remove any selected value
+            $("#DepartmentName").select2({
+                matcher: function (term, text, option) {
+                    return $(option[0].outerHTML).attr("value") == rel_
+                }
+            })
+        });
+    })
+</script> -->

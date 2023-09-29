@@ -1,0 +1,205 @@
+<!--Footer-->
+
+<style>
+    @media print {
+        body * {
+            display: none;
+        }
+
+        .scene,
+        .scene * {
+            display: block;
+        }
+    }
+
+    .o-six {
+        box-shadow: -2px -2px 4px 1px black;
+    }
+
+    .osixText button.active,
+    .osixText p {
+        color: black;
+
+    }
+
+    .active .osixNav {
+        background-color: black;
+    }
+
+    .osixNav::before {
+        background-color: black;
+    }
+
+    .VG #sunglasses {
+        display: none;
+    }
+
+
+    .osixTick.activeTick::before {
+        background-color: black;
+        color: white;
+        width: 15px;
+        height: 15px;
+        content: '\2713';
+        /* position: absolute;
+        left: 25%; */
+        margin-right: 5px;
+        border-radius: 50%;
+        font-weight: bold;
+    }
+
+    .o-sixFooter {
+        margin-bottom: 20px;
+    }
+
+
+    .o-six .outer-grid img.active {
+        box-shadow: 3px 3px 5px 0px black;
+
+    }
+
+    .o-six .outer-grid img:hover {
+        box-shadow: 3px 3px 5px 0px black;
+
+    }
+
+    #colorBoxTab .o-six .outer-grid img:hover {
+        box-shadow: 3px 3px 5px 0px black;
+    }
+
+
+    #colorBoxTab .o-six .outer-grid img.active {
+        box-shadow: 3px 3px 5px 0px black;
+
+    }
+
+
+    #toggleButton i {
+        color: black;
+    }
+</style>
+
+<footer class="footer-sec" id="footer">
+    <div class="frame container">
+        <!-- <img src="" alt=""> -->
+        <div class="left_bottom o-sixFooter">
+            <div class="iGreen_Logo">
+                <img src="/img/gvLogo.jpg" alt="">
+
+            </div>
+            <div class="AddCart_btn">
+                <button>
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="leftSemi_bottom">
+            <div class="theme_link">
+                <a href="">
+                    <img src="/img/Thema - Family Factory WEBSITE.png" alt="">
+                </a>
+
+            </div>
+            <div class="shotIcons">
+
+                <button class="like_btn tooltip">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="tooltiptext">Add to Cart</span>
+                </button>
+                <button id="printModel" class="print_btn tooltip">
+                    <i class="fa-solid fa-print"></i>
+                    <span class="tooltiptext">Print</span>
+                </button>
+
+                <button class="share_btn tooltip" id="ShareBtn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span class="tooltiptext">Share</span>
+                </button>
+
+                <div id="share-button" class="share-box">
+                    <div class="share-content">
+                        <span class="close_btn">Close</span>
+                        <span class="Send">Send</span>
+                        <p style="font-size: 25px;">Share</p>
+                        <div class="mailBox">
+                            <form name="mailForm" method="post" action="your_server_script.php"
+                                onsubmit="return validateForm()">
+                                <div class="input-container">
+                                    <input type="email" name="senderEmail" class="input-field"
+                                        placeholder="*Sender email">
+                                    <label class="floating-label">*Sender email</label>
+                                </div>
+                                <div class="input-container">
+                                    <input type="email" name="recipientEmail" class="input-field"
+                                        placeholder="*Recipient email">
+                                    <label class="floating-label">*Recipient email</label>
+                                </div>
+                                <div class="input-container">
+                                    <textarea name="note" form="mailForm" class="input-field" rows="5"
+                                        placeholder="Note"></textarea>
+                                    <label class="floating-label">*Note</label>
+                                </div>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button class="locator_btn tooltip">
+                    <i class="fa-solid fa-location-dot" style="color:#d9000c;"></i>
+                    <span class="tooltiptext">Store Locator</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    const printBtn = document.getElementById('printModel');
+    printBtn.addEventListener('click', function () {
+        print();
+
+    })
+</script>
+<script>
+    function validateForm() {
+        var senderEmail = document.forms["mailForm"]["senderEmail"].value;
+        var recipientEmail = document.forms["mailForm"]["recipientEmail"].value;
+        var note = document.forms["mailForm"]["note"].value;
+
+        // Perform form validation here
+        // You can add your validation logic, e.g., checking for empty fields, valid email addresses, etc.
+        // If validation fails, you can display an error message and return false to prevent form submission.
+
+        // Example validation:
+        if (senderEmail === "" || recipientEmail === "" || note === "") {
+            alert("All fields are required.");
+            return false;
+        }
+
+        // If validation succeeds, you can proceed with form submission.
+        // You can use AJAX to submit the form data to a server or perform any other desired action.
+        // For this example, we'll just show an alert.
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+
+
+<script src="/js/dummydata.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/sidebar.js"></script>
+<script type="module" src="/js/module.js"></script>
+<script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

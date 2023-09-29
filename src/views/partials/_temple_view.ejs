@@ -7,28 +7,67 @@
 
             <div id="frontTab">
 
-                <div class="search_bar">
-                    <input type="search" id="searchBar" placeholder="Seach Models"><i
-                        class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="type_tab" style="display: flex;">
-                    <button id="eyeglasses" class="active" onclick="activateTab('eyeglasses')">Eyeglasses</button>
-                    <button id="sunglasses" onclick="activateTab('sunglasses')">Sunglasses</button>
-                </div>
-                <div class="size_tab" style="display: flex;">
-                    <label>SIZE</label>
-                    <div class="size_btn">
-                        <button class="active">45/49</button>
-                        <button>52/54</button>
-                        <button>51/52</button>
-
+                <div class="material_type" style="display: flex;">
+                    <label>material</label>
+                    <div class="material_list osixText" style="display: flex;">
+                        <button id="materialMetal" class="active">Metal</button>
+                        <button id="materialPlastic">Plastic</button>
                     </div>
                 </div>
-                <div class="nose_tab" style="display: flex;">
-                    <label>NOSE-PAD</label>
-                    <div class="nose-pad type_tab" style="display: flex;">
-                        <button id="eyeglasses" class="active">NO</button>
-                        <button id="sunglasses">YES</button>
+
+                <div class="materials_color metal-Content" id="metalContent" style="display: flex;">
+                    <!-- <label>Finishing</label> -->
+                    <div class="material_cold osixText" style="display: flex;">
+                        <button id="materialGun" class="active">GUN</button>
+                        <button id="materialGold">GOLD</button>
+                    </div>
+                </div>
+
+                <div class="finsh_type metal-Content" id="metalContent" style="display: flex;">
+                    <label>Finishing</label>
+                    <div class="finsh_list osixText" style="display: flex;">
+                        <button id="materialMatt" class="active">MATT</button>
+                        <button id="materialShiny">SHINY</button>
+                    </div>
+                </div>
+
+                <div class="material_size metal-Content" id="metalContent" style="display: flex;">
+                    <label>SIZE</label>
+                    <div class="size_number osixText" style="display: flex;">
+                        <button id="singlesize" class="active">143</button>
+                    </div>
+
+                </div>
+
+
+                <!--------------------On selecting the plastic as metal, below code show be visible------------------>
+
+                <div id="PlasticTemples" style="display: none;">
+
+                    <div class="material_type" style="display: flex;">
+                        <label>material</label>
+                        <div class="material_list" style="display: flex;">
+                            <button id="materialMetal">Metal</button>
+                            <button id="materialPlastic" class="active">Plastic</button>
+                        </div>
+                    </div>
+
+                    <div class="finsh_type" style="display: flex;">
+                        <label>Finishing</label>
+                        <div class="finsh_list" style="display: flex;">
+                            <button id="materialMatt" class="active">MATT</button>
+                            <button id="materialShiny">SHINY</button>
+                        </div>
+                    </div>
+
+                    <div class="material_size" style="display: flex;">
+                        <label>SIZE</label>
+                        <div class="size_number plastic" style="display: flex;">
+                            <button id="singlesize" class="active">143</button>
+                            <button id="singlesize">143</button>
+                            <button id="singlesize">143</button>
+                            <button id="singlesize">143</button>
+                        </div>
 
                     </div>
 
@@ -36,26 +75,56 @@
             </div>
 
         </div>
-        <div class="gridView" id="imageContainer">
+        <div class="gridView o-six" id="imageContainer">
             <!-- <img src="/img/Colors/PL0987.jpg" alt="Image for 45/49"><img src="/img/IG4.161C.png"
                 alt="Image for 45/49"><img src="/img/IG4.162C.png" alt="Image for 45/49"><img
                 src="/img/IG4.165C.png" alt="Image for 45/49"><img src="/img/IG4.166C.png"
                 alt="Image for 45/49"><img src="/img/Colors/PL0987.jpg" alt="Image for 45/49"> -->
             <div class="outer-grid">
                 <div class="inner-grid">
-                    <img src="/img/Colors/PL0983.jpg" />
-                    <img src="/img/Colors/PL0983.jpg" />
-                    <img src="/img/Colors/PL0983.jpg" />
+                    <img src="/img/temples/PL0064.jpg" />
+                    <img src="/img/temples/PL0070.jpg" />
+                    <img src="/img/temples/PL0066.jpg" />
+                    <img src="/img/temples/PL0067.jpg" />
+                    <img src="/img/temples/PL0068.jpg" />
+
                 </div>
                 <div class="inner-grid">
-                    <img src="/img/Colors/PL0982.jpg" />
-                    <img src="/img/Colors/PL0982.jpg" />
-                    <img src="/img/Colors/PL0982.jpg" />
+                    <img src="/img/temples/PL0069.jpg" />
+                    <img src="/img/temples/PL0071.jpg" />
+                    <img src="/img/temples/PL0082.jpg" />
+                    <img src="/img/temples/PL0084.jpg" />
+                    <img src="/img/temples/PL0087.jpg" />
+
                 </div>
                 <div class="inner-grid">
-                    <img src="/img/Colors/PL1012.jpg" />
-                    <img src="/img/Colors/PL1012.jpg" />
-                    <img src="/img/Colors/PL1012.jpg" />
+                    <img src="/img/temples/PL0088.jpg" />
+                    <img src="/img/temples/PL0089.jpg" />
+                    <img src="/img/temples/PL0090.jpg" />
+                    <img src="/img/temples/PL0091.jpg" />
+                    <img src="/img/temples/PL0092.jpg" />
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="gridView o-six" id="PlasticContainer">
+            <div class="outer-grid">
+                <div class="inner-grid">
+                    <img src="/img/temples/PL0067.jpg" />
+                    <img src="/img/temples/PL0068.jpg" />
+
+                </div>
+                <div class="inner-grid">
+                    <img src="/img/temples/PL0084.jpg" />
+                    <img src="/img/temples/PL0087.jpg" />
+
+                </div>
+                <div class="inner-grid">
+                    <img src="/img/temples/PL0091.jpg" />
+                    <img src="/img/temples/PL0092.jpg" />
+
                 </div>
 
 

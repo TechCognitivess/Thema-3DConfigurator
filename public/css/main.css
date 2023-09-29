@@ -6,12 +6,11 @@ body {
 
 }
 
-  
-
 
 .scene {
     width: 100%;
-    height: 74vh;
+    height: 62vh;
+    margin-top: 2% !important;
 }
 
 
@@ -28,7 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    height: 60px;
+    height: 30px;
     /* Adjusted height for better visibility */
     padding: 0 20px;
     /* Added padding for spacing */
@@ -39,7 +38,8 @@ body {
 
 .top-bar h4 {
     margin: 0;
-    font-size: 500;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .wishlist_btn,
@@ -54,6 +54,7 @@ body {
 .top-bar i {
     padding-right: 10px;
     font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .top_right {
@@ -64,19 +65,33 @@ body {
 /**********************************dropdown***********/
 
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
 
-.dropdown{
+
+.dropdown {
     display: flex;
 }
+
 .dropdown-content {
     position: absolute;
     background-color: white;
     border: 1px solid #ccc;
-    z-index: 1;
-    display: none;
-    display: block;
+    z-index: 1001;
+    width: 97%;
+    top: 100%;
+    /* display: none; */
+    /* display: block; */
     /* left: 25px; */
-    z-index: -1;
+    /* z-index: -1; */
     /* top: 25px;
 }
 
@@ -114,13 +129,60 @@ body {
     /* height: 68px; */
     background-color: white;
     /* display: flex; */
-    padding: 18px;
-    width: 52%;
+    padding: 5px;
+    width: 65%;
+    /* border-bottom: 1px solid #cccccc; */
+}
+
+.logo_container .igreenlogo {
+    width: 76px !important;
+}
+
+.logo_container .Osixlogo {
+    width: 85px !important;
+    margin-top: 7px;
+}
+
+.logo_container .gvlogo {
+    width: 165px !important;
+    /* padding: 6px; */
+    padding-top: 19px;
+    margin-top: 7px;
+
+}
+
+.logo_container {
     border-bottom: 1px solid #cccccc;
+    height: 50px;
 }
 
 .dropdown-content img {
     width: 100px;
+}
+
+/*******************************/
+
+#navTab span {
+    margin-right: 8px;
+}
+
+.stepBystep {
+    width: 20px;
+    height: 18px;
+    background: #888;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    margin-top: 0;
+    padding-top: 0;
+    border-radius: 50%;
+}
+
+
+.active .stepBystep {
+    background-color: #037b3f;
+    color: #fff;
 }
 
 .customized_tabs .dropdown-content ul li {
@@ -159,8 +221,8 @@ body {
 }
 
 .customized_tabs ul li:hover {
-    background-color: black;
-    color: green;
+    background-color: #bbb;
+    /* color: green; */
     cursor: pointer;
     border-radius: 25px;
     transition: 0.5s ease;
@@ -169,6 +231,7 @@ body {
 .customized_tabs ul {
     margin: 0 !important;
     /* padding-left: 0; */
+    height: 23px;
     /* border: 1px solid #aaa; */
     border-left: none;
     border-right: none;
@@ -180,18 +243,18 @@ body {
 }
 
 .customized_tabs ul li {
+    position: relative;
     flex: 1;
     list-style: none;
-    color: white;
+    color: black;
     text-transform: uppercase;
-    /* margin: 0px 20px; */
-    font-size: 20px;
-    padding: 8px 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
     font-weight: 400;
     text-align: center;
-    background: #aaa;
-    /* height: 20px; */
-    /* border: 1px solid red; */
+    background: #ccc;
     border-radius: 25px;
 
 }
@@ -202,10 +265,11 @@ hr {
 
 .customized_tabs .active,
 .dropdown .active {
-    background-color: black;
-    color: green;
+    background-color: #fff;
+    color: black;
     text-align: center;
     border-radius: 25px;
+    border: 1px solid #999;
 }
 
 .customized_tabs li,
@@ -220,7 +284,7 @@ hr {
 .feature_boxes {
     border-top-left-radius: 15px;
     /* box-shadow: 0px -1px 4px 3px green; */
-    background-color: white;
+    background-color: #ccc;
 }
 
 /* .feature_boxes .feature_box {
@@ -228,9 +292,9 @@ hr {
 /* font-size: 35px; */
 
 
-.feature_boxes span {
+/* .feature_boxes span {
     color: Red;
-}
+} */
 
 .left_bottom {
     /* width: 65%; */
@@ -262,11 +326,24 @@ hr {
 
 .frame_list img {
     width: 145px;
-    box-shadow: 0px 5px 5px #888888;
+    box-shadow: 3px 0px 5px 0px #888888;
     margin: 5px;
     background-color: white;
-    padding: 7px;
-    border-radius: 5px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#colorBoxTab .outer-grid img {
+    /* width: 145px; */
+    box-shadow: 3px 0px 5px 0px #888888;
+    /* margin: 5px; */
+    background-color: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#colorBoxTab .outer-grid img.active {
+    box-shadow: 3px 3px 5px 0px #037b3f;
 }
 
 .select_color img {
@@ -292,38 +369,81 @@ hr {
     /* height: 600px; */
     overflow: scroll;
     overflow-x: hidden;
+    background-color: #ccc;
 }
 
-.product_list img:hover {
+/* .product_list img:hover {
     box-shadow: 0px 5px 5px green;
 
+} */
+.inner-grid img:hover {
+    box-shadow: 3px 3px 5px 0px #037b3f;
+
 }
+
+/* .inner-grid div:hover {
+    box-shadow:0px 0px 5px 2px green;
+
+} */
 
 
 .select_color img:hover {
-    box-shadow: 0px 5px 5px green;
+    box-shadow: 0px 5px 5px #037b3f;
 
 }
 
 /************************FRONTS SEARCH BOX******************/
+
+#frontBoxTab .gridView .inner-grid img {
+    height: 70px;
+}
+
+
 #frontTab,
-#colorTab,
+/* #colorTab, */
 #templesTab,
 #lensesTab {
     display: grid;
     grid-template-columns: auto auto;
 
+}
 
+.colorBar {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+.custom-input-box input {
+    border: none;
+}
+
+.custom-input-box input:focus {
+    outline: none;
+}
+
+/* #colorBoxTab #frontBox {
+    display: contents !important;
+} */
+
+#colorBoxTab .gridView {
+    margin-top: 28%;
+    /*default*/
+}
+
+#colorBoxTab .gridView>div>h2#selectedColorsLabel[style*="display: block"] {
+    margin-top: 36% !important;
+    /* Applied when the content is active */
 }
 
 .search_tabs {
     /* display: grid; */
-    color: #ffffff;
+    /* color: #ffffff; */
     padding: 12px;
     /* border-radius: 5px; */
     border-top-left-radius: 15px;
-    border-bottom: 1px solid #ffffff;
-    background-color: black;
+    /* border-bottom: 1px solid #ffffff; */
+    background-color: #ccc;
 
 }
 
@@ -337,15 +457,16 @@ input[type="search"] {
 
 .search_bar {
     position: relative;
+    padding-right: 13px;
 }
 
 .search_bar input[type="search"] {
     padding-right: 30px;
-    color: white !important;
+    color: black !important;
 }
 
 ::placeholder {
-    color:#ffffff;
+    color: black;
 
 
 }
@@ -364,55 +485,56 @@ input[type="search"] {
     background-position: 245px 9px;
     background-repeat: no-repeat;
     width: 100%;
-    max-width: 95%;
+    /* max-width: 95%; */
     border: 1px solid #ffffff;
     border-radius: 25px;
     margin-bottom: 12px;
     background-size: 15px;
-    background-color: black;
+    height: 30px;
+    /* background-color: black; */
 }
 
 
 
 .type_tab button {
     background-color: white;
-    color: green;
+    color: #037b3f;
     border: none;
     cursor: pointer;
     padding: 10px 15px;
     font-size: 16px;
 }
 
-.type_tab button#sunglasses.active {
+.type_tab button.active {
+    background-color: #aaa;
+    color: #037b3f;
+    margin: 3px;
+}
+
+/* .type_tab button#eyeglasses.active {
     background-color: white;
     color: green;
     margin: 3px;
 }
-
-.type_tab button#eyeglasses.active {
-    background-color: white;
-    color: green;
-    margin: 3px;
-}
-
+ */
 .type_tab {
     display: none;
     border-radius: 25px;
-    border: 1px solid #ccc;
-    height: 36px;
+    border: 1px solid #ffffff;
+    height: 30px;
 }
 
 .type_tab button {
     padding: 0;
-    margin: 0;
+    margin: 3px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 13px;
     border-radius: 5px;
     max-width: 100%;
     width: 100%;
-    background-color: black;
-    color: white;
+    /* background-color: black; */
+    color: #aaa;
     border: none;
     border-radius: 25px;
 }
@@ -425,8 +547,9 @@ input[type="search"] {
 .material_size label,
 .engraving_type label {
     margin-right: 8px;
-    padding: 10px 0;
+    padding: 5px 0;
     text-transform: uppercase;
+    color: black;
 }
 
 
@@ -437,6 +560,7 @@ input[type="search"] {
 .finsh_type,
 .material_size {
     height: 38px;
+    padding-right: 13px;
 }
 
 .size_btn button,
@@ -449,12 +573,19 @@ input[type="search"] {
 .engraving_sides button {
     border: 3px solid #000000;
     background: none;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 500;
-    height: 36px;
-    padding: 0 13px;
+    color: #aaa;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 2px;
     border-radius: 25px;
+    width: 100%;
+    margin: 3px;
+    background-color: white;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -466,7 +597,13 @@ input[type="search"] {
 .size_number,
 .engraving_sides {
     border: 1px solid #ffffff;
+    /* border: 1px solid #999; */
     border-radius: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+
 }
 
 .size_btn .active,
@@ -476,9 +613,18 @@ input[type="search"] {
 .finsh_list .active,
 .size_number .active,
 .engraving_sides .active {
-    background-color: #ffffff;
-    color: green;
+    background-color: #aaaa;
+    color: #037b3f;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    margin: 3px;
 }
+
+/* .material_list .active{
+    background-color: red;
+} */
+
 
 .fishing_tab label {
     margin-right: 3px;
@@ -501,15 +647,25 @@ input[type="search"] {
 
 .nose_tab label {
     white-space: nowrap;
-    padding: 12px 0;
+    padding: 7px 0;
+    margin-right: 10px;
+    padding-left: 4px;
+}
+
+
+
+
+.inner-grid img.active {
+    box-shadow: 3px 3px 5px 0px #037b3f;
 }
 
 /**********************Colors Tab CSS**********************/
 
 .choose_color {
+    padding: 2px;
     border-radius: 25px;
     position: relative;
-    height: 38px;
+    height: 30px;
     border: none;
     border: 1px solid white;
     text-align: center;
@@ -517,14 +673,14 @@ input[type="search"] {
 
 
 .choose_color ::placeholder {
-    color: white;
+    color: black;
     font-weight: 700;
 }
 
 
 .choose_color select {
     background-color: black;
-    color: white;
+    color: black;
     /* border: 1px solid #ccc; */
     border: none;
     width: 200px;
@@ -534,7 +690,7 @@ input[type="search"] {
     padding-left: 5px;
     font-size: 13px;
     font-weight: 700;
-    margin-top: 6px;
+    /* margin-top: 6px; */
     appearance: none;
     /* Remove default arrow in modern browsers */
     background: none;
@@ -572,18 +728,37 @@ input[type="search"] {
     max-width: 130px;
 }
 
+.materials_color {
+    justify-content: end;
+}
+
 .size_number {
-    max-width: 53px;
+    max-width: 100%;
 }
 
 .plastic {
     max-width: 211px;
 }
 
-.finsh_list {
-    max-width: 139px;
+.material_size {
+    justify-content: center;
+    padding-left: 15px;
 }
 
+/* 
+#materialPlastic .active .material_cold,
+.metal-Content {
+    display: none;
+
+} */
+
+/* .finsh_list {
+    max-width: 139px;
+} */
+
+/* .metal-Content{
+    display: contents!important;
+} */
 /********************************ENGRAVING CSS ******************/
 
 .image-container img {
@@ -614,7 +789,7 @@ input[type="search"] {
     transform: translate(-50%, -50%);
     font-size: 15px;
     /* font-weight: bold; */
-    color: green;
+    color: #037b3f;
     /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     rotate: 120ge;
     rotate: -17deg;
@@ -622,13 +797,17 @@ input[type="search"] {
 }
 
 .engraving_sides {
-    max-width: 349px;
-    margin-left: 35px;
+    /* width: 25%; */
 }
 
-.engraving_type {
+/* .engraving_sides {
+    max-width: 349px;
+    margin-left: 35px;
+} */
+
+/* .engraving_type {
     margin-bottom: 12px;
-}
+} */
 
 .cutomed-name input[type="text"] {
     background-color: black;
@@ -636,7 +815,7 @@ input[type="search"] {
     max-width: 65%;
     border: 1px solid white;
     border-radius: 25px;
-    margin-left: 19px;
+    margin-left: 5px;
     padding-right: 30px;
     color: white !important;
     font-weight: 700;
@@ -646,6 +825,8 @@ input[type="search"] {
 
 .cutomed-name label {
     white-space: nowrap;
+    padding: 10px 0;
+    margin-left: 20px;
 }
 
 .custom-name {
@@ -660,7 +841,7 @@ input[type="search"] {
     color: gray;
     text-align: center;
     margin-left: 15px;
-    padding-right: 125px;
+    padding-left: 250px;
 }
 
 #engravingTab p {
@@ -668,11 +849,232 @@ input[type="search"] {
 }
 
 
+#svgFront,
+#svgRight,
+#svgLeft {
+    width: 300px;
+    display: block;
+    margin: auto;
+    height: 220px;
+    padding-top: 25px;
+
+}
+
+/* #svgRight,
+#svgLeft {
+    padding-top: 15px;
+
+} */
+
+.engraving_sides .nose-pad {
+    padding-bottom: 20px;
+}
+
+.semiColors {
+    position: relative;
+    padding-top: 10px;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    box-shadow: -3px -3px 6px 0px #037b3f;
+    border-top-left-radius: 15px;
+}
+
+.semiColors .custom {
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+
+
+
+.selfont {
+    padding-top: 10px;
+    white-space: nowrap;
+    font-weight: 100;
+}
+
+#engravingBoxTab .gridView .inner-grid {
+    height: 20px;
+    /* width: 30px; */
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    flex: none;
+}
+
+#engravingBoxTab .gridView .inner-grid {
+    flex: 12% !important;
+    height: auto;
+
+}
+
+#engravingBoxTab .gridView .outer-grid {
+    margin-top: 5px;
+
+}
+
+#engravingInside,
+#engravingOut {
+    background-color: #888888;
+    color: white;
+    border: none;
+    padding: 4px 0;
+    font-weight: 400;
+
+}
+
+#engravingInside {
+    background-color: black;
+    color: #037b3f;
+    font-weight: 400;
+
+}
+
+/* #engravingBoxTab .gridView .inner-grid img {
+    flex: 16%;
+} */
+
+#engravingBoxTab .gridView {
+    margin-top: 12%;
+    box-shadow: none !important;
+    border-top-left-radius: 1px;
+    /* box-shadow:  */
+}
+
+
+
+.custom_name input[type="text"] {
+    /* margin-top: 15px; */
+    width: 100%;
+    /* max-width: 95%; */
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-bottom: 12px;
+    background-size: 15px;
+    height: 38px;
+    padding: 10px;
+    /* color:white; */
+    /* background-color: ; */
+    margin: 0 10px;
+}
+
+.custom_name {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-evenly;
+    width: 96%;
+}
+
+.semiColors p {
+    font-size: 10px;
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    color: #ccc;
+}
+
+.bold-arrow {
+    font-weight: bold;
+}
+
+.custom_name ::placeholder {
+    color: #ccc;
+
+
+}
+
+.custom_name {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+
+.dots {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+#engravingBoxTab .inner-grid div.active {
+    box-shadow: 0px 0px 0px 3px #037b3f;
+    /* border-radius: 15px; */
+
+}
+
+textPath {
+    font-weight: 500;
+}
+
+.radio-button {
+    display: inline-block;
+    padding: 3px 20px;
+    background-color: #888888;
+    color: #ddd;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    /* margin: 5px; */
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 12px;
+}
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radiogroup {
+    margin-bottom: 20px;
+}
+
+/* .radio-button .active {
+    background-color: black;
+    color: green;
+    font-size: 19px;
+  } */
+.radiogroup .active {
+    background-color: black;
+    color: #037b3f;
+    font-weight: 600;
+
+}
+
+/************************Lenses***************/
+#lensesBoxTab .inner-grid img {
+    border-radius: 50%;
+}
+
+
+.Lenses-container .Lenses-shade {
+    position: relative;
+}
+
+
+
+#lensesBoxTab .inner-grid .reflections-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+
+
 
 /***********************************************/
 .right_bar {
     position: relative;
-    box-shadow: -2px -2px 4px 1px green;
+    box-shadow: -2px -2px 4px 1px #037b3f;
     background-color: black;
     height: auto;
     max-width: 35%;
@@ -690,6 +1092,7 @@ input[type="search"] {
     font-size: 50px;
 }
 
+/*****************footer**************/
 .AddCart_btn button {
     padding: 10px;
     /* margin-right: 15px; */
@@ -705,8 +1108,204 @@ input[type="search"] {
     border: none;
     font-size: 25px;
     background: none;
-    margin: 5px;
+    margin: 10px;
 }
+
+.shotIcons button i {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.locator_btn i {
+    color: #037b3f;
+}
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 95px;
+    background-color: #ddd;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 115%;
+    margin-left: -60px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+.share-box {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.share-box ::placeholder {
+    color: black;
+}
+
+
+.share-box input,
+textarea {
+    color: #037b3f;
+    align-items: flex-start;
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 16px;
+    letter-spacing: normal;
+    max-width: 100%;
+    text-align: left;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.share-box input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #037b3f;
+    /* border-width: medium medium 2px; */
+
+}
+
+.share-content .floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: 0px;
+    left: 10px;
+    transition: 0.2s ease all;
+}
+
+
+
+.share-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 5px;
+    height: 65vh;
+}
+
+.mailBox {
+    display: grid;
+    margin-top: 20px;
+}
+
+.mailBox input,
+textarea {
+    padding: 5px;
+    /* margin: 5px; */
+    margin-top: 25px;
+}
+
+.close_btn,
+.Send {
+    position: absolute;
+    bottom: 0;
+    right: 115px;
+    top: 90%;
+    text-transform: uppercase;
+    color: #037b3f;
+    cursor: pointer;
+    /* background-color: rgba(0, 128, 0, 0.1); */
+
+
+}
+
+.close_btn:hover,
+.Send:hover {
+
+    font-weight: 600;
+}
+
+.Send {
+    right: 40px;
+
+}
+
+.input-container {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    /* Set the width of the container */
+    /* max-width: 400px; */
+    /* Set a maximum width if needed */
+
+}
+
+.share-box textarea {
+    /* Your existing textarea styles */
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    /* Prevent textarea from being resized */
+}
+
+.share-box ::placeholder {
+    color: transparent;
+    /* Hide the placeholder */
+}
+
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: 18px;
+    left: 20px;
+    transition: 0.2s ease all;
+    color: black;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.input-field:focus+.floating-label {
+    opacity: 1;
+    transform: translateY(-26px);
+    color: #037b3f;
+}
+
+.input-field:not(:focus):placeholder-shown+.floating-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+/******************************/
 
 .theme_link img {
     width: 90px;
@@ -716,13 +1315,38 @@ input[type="search"] {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    margin-top: 10px;
 }
+
+
+.rotate-button {
+    rotate: 0deg;
+}
+
+.sidebar-container {
+    position: relative;
+}
+
+/*sidebar styles
+    /* width: 250px; */
+/* ... */
+
+
+/* .toggle-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: left 0.3s ease; 
+} */
+
+
 
 #toggleButton {
     display: block;
     position: absolute;
     top: 50%;
     left: -28px;
+    rotate: 180deg;
     /* background: none!important; */
     /* border: 1px solid #ccc; */
     background-color: white;
@@ -732,7 +1356,7 @@ input[type="search"] {
 }
 
 #toggleButton i {
-    color: green;
+    color: #037b3f;
     background: none !important;
     font-size: 28px;
 
@@ -745,90 +1369,36 @@ input[type="search"] {
     overflow-y: visible;
 }
 
-.read-more-btn {
-    background: antiquewhite;
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 40px;
-    margin: 30px;
+
+
+#frontTab label {
+    /* padding-right: 5px; */
+    color: black;
 }
 
-#frontTab label{
-    padding-right: 5px;
-    color: #ffffff;
-}
-#frontTab form{
+#frontTab form {
     padding: 7px 3px;
 }
 
-.size_btn .second, .size_btn .first{
+.size_btn .second,
+.size_btn .first {
     border-right: 1px solid #ffffff;
 
 }
 
 
-.slideview-switch .switch {
+
+
+
+
+/* Rounded sliders */
+
+
+.dropdown {
     position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
- .slideview-switch .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slideview-switch .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slideview-switch .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slideview-switch input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  .slideview-switch input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  .slideview-switch input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slideview-switch .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slideview-switch .slider.round:before {
-    border-radius: 50%;
-  }
-  .slideview-switch .nose-pad-txt{
-    padding: 8px 8px;
-  }
-  .dropdown{
-    position: relative;
-  }
+}
+
+
+
+
+/**************** pop up css ***************/

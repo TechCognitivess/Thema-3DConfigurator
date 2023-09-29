@@ -1,10 +1,20 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.133.1";
 
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/DRACOLoader.js";
-import { TextGeometry } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/geometries/TextGeometry.js";
-import { FontLoader } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/FontLoader.js";
+import {
+  OrbitControls
+} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
+import {
+  GLTFLoader
+} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/GLTFLoader.js";
+import {
+  DRACOLoader
+} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/DRACOLoader.js";
+import {
+  TextGeometry
+} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/geometries/TextGeometry.js";
+import {
+  FontLoader
+} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/FontLoader.js";
 
 let container = document.querySelector(".scene");
 let camera;
@@ -22,11 +32,12 @@ const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath(
   "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
 );
-dracoLoader.setDecoderConfig({ type: "js" });
+dracoLoader.setDecoderConfig({
+  type: "js"
+});
 dracoLoader.preload();
 
-const frame1 = [
-  {
+const frame1 = [{
     meshName: "main",
     gltf: "/img/model/IG4.123C.gltf",
     scale: 1,
@@ -40,8 +51,7 @@ const frame1 = [
   },
 ];
 
-const frame2 = [
-  {
+const frame2 = [{
     meshName: "main",
     gltf: "/img/model/IG4.166C.gltf",
     scale: 1,
@@ -53,6 +63,20 @@ const frame2 = [
     scale: 1,
     isFlip: true,
   },
+];
+var temple = [{
+  meshName: 'temple',
+  gltf: '/img/model/rTemplePlast.gltf',
+  // colorCode: 'fffffff', 
+  scale: 0.01,
+  isFlip: false,
+},
+{
+  meshName: 'temple',
+  gltf: '/img/model/rTemplePlast.gltf',
+  scale: 0.01,
+  isFlip: true,
+},
 ];
 let frameList = [frame1, frame2];
 
@@ -135,7 +159,15 @@ loadFrames(frameList[0], "main");
 function onMouseMove(event) {
   mouse.x = (event.clientX / container.clientWidth) * 2 - 1;
   mouse.y = -(event.clientY / container.clientHeight) * 2 + 1;
+  //console.log(mouse.x, mouse.y)
 }
+
+/************** */
+function frameTemplesLenses(DefaultFrame) {
+
+}
+
+
 
 export function loadFrames(modelObj, meshName) {
   if (renderer != null && meshName == "main") {
@@ -145,7 +177,7 @@ export function loadFrames(modelObj, meshName) {
   modelContainer = new THREE.Group();
   scene.add(modelContainer);
 
-  const fov = 15;
+  const fov = 25;
   const aspect = container.clientWidth / container.clientHeight;
   const near = 0.7;
   const far = 900;
@@ -162,7 +194,10 @@ export function loadFrames(modelObj, meshName) {
   scene.add(light);
 
   //renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true
+  });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -171,6 +206,12 @@ export function loadFrames(modelObj, meshName) {
 
   //load model
   gLTFLoader(modelObj);
+  setTimeout(function(){
+    gLTFLoader(temple);
+  }, 2000); 
+  
+  
+  
 
   animate();
   onWindowResize();
@@ -213,43 +254,53 @@ function textLoader() {
 function gLTFLoader(modelObj) {
   loader = new GLTFLoader();
   modelObj.forEach((modelDetails) => {
-    const { gltf, scale, position, link, isFlip, meshName } = modelDetails;
-    loader.load(gltf, ({ scene }) => {
-      if (meshName == "main" && !isFlip) {
-        var target = scene.children.find((temp) => temp.name == "P1");
-        if (target) modelPosition = target.position;
-        else console.log("doesn't exists");
-      }
-      modelContainer.add(scene);
-      scene.scale.set(scale, scale, scale);
-      if ((meshName == "temple" || meshName == "bolt") && isFlip == false) {
-        scene.position.set(modelPosition.x, modelPosition.y, modelPosition.z);
-      } else if (
-        (meshName == "temple" || meshName == "bolt") &&
-        isFlip == true
-      ) {
-        scene.position.set(-modelPosition.x, modelPosition.y, modelPosition.z);
-      } else {
-        scene.position.set(0, 0, 0);
-      }
+    const {
+      gltf,
+      scale,
+      position,
+      link,
+      isFlip,
+      meshName
+    } = modelDetails;
+    loader.load(gltf, ({
+        scene
+      }) => {
+        if (meshName == "main" && !isFlip) {
+          var target = scene.children.find((temp) => temp.name == "P1");
+          if (target) modelPosition = target.position;
+          else console.log("doesn't exists");
+        }
+        modelContainer.add(scene);
+        scene.scale.set(scale, scale, scale);
+        if ((meshName == "temple" || meshName == "bolt") && isFlip == false) {
+          scene.position.set(modelPosition.x, modelPosition.y, modelPosition.z);
+        } else if (
+          (meshName == "temple" || meshName == "bolt") &&
+          isFlip == true
 
-      //scene.add(sprite);
-      if (isFlip) {
-        const vector = new THREE.Vector3(1, 1, 1);
-        vector.x *= -1;
-        vector.z *= 1;
-        scene.scale.multiply(vector);
+        ) {
+          scene.position.set(-modelPosition.x, modelPosition.y, modelPosition.z);
+        } else {
+          scene.position.set(0, 0, 0);
+        }
+
+        //scene.add(sprite);
+        if (isFlip) {
+          const vector = new THREE.Vector3(1, 1, 1);
+          vector.x *= -1;
+          vector.z *= 1;
+          scene.scale.multiply(vector);
+        }
+      },
+      function (xhr) {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+      },
+
+      // onError callback
+      function (err) {
+        console.error('An error happened');
       }
-    },
-    function ( xhr ) {
-      console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-    },
-  
-    // onError callback
-    function ( err ) {
-      console.error( 'An error happened' );
-    }
-  );
+    );
   });
   loader.setDRACOLoader(dracoLoader);
 }
@@ -271,17 +322,20 @@ function sceneTraverse(meshName, url) {
               map: texture,
             });
             texture.flipY = false;
-            var materialObj = childrenObj.getObjectByName(meshName);
-            materialObj.material.dispose();
-            materialObj.material = material;
-            materialObj.material.map.isRenderTargetTexture = true;
-            materialObj.material.map.premultiplyAlpha = true;
-            materialObj.material.map.flipY = true;
-            texture.needsUpdate = true;
-            materialObj.material.needsUpdate = true;
-            //child.material.background.needsUpdate = true;
-            materialObj.material.background = material;
-            animate();
+            if (childrenObj.getObjectByName(meshName) != null) {
+              var materialObj = childrenObj.getObjectByName(meshName);
+              materialObj.material.dispose();
+              materialObj.material = material;
+              materialObj.material.map.isRenderTargetTexture = true;
+              materialObj.material.map.premultiplyAlpha = true;
+              materialObj.material.map.flipY = true;
+              texture.needsUpdate = true;
+              materialObj.material.needsUpdate = true;
+              //child.material.background.needsUpdate = true;
+              materialObj.material.background = material;
+              animate();
+            }
+
           }
         },
         function (xhr) {
@@ -310,13 +364,21 @@ function animate() {
   // });
 
   controls.update();
+
   renderer.physicallyCorrectLights = true;
   renderer.render(scene, camera);
+  update()
 }
+function update() {
+  controls.maxDistance = 6;
+  controls.minDistance =3;
+}
+
 
 function onWindowResize() {
   camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
+  
   renderer.setSize(container.clientWidth, container.clientHeight);
 }
 
@@ -352,17 +414,66 @@ function disposeAllObjects() {
   });
 }
 
-export function setFrame(pos){
+export function disposeTempleObject() {
+  scene.children.forEach((sceneObject) => {
+    if (!(sceneObject instanceof THREE.Object3D)) return;
+
+    // Remove geometries to free GPU resources
+    if (sceneObject.geometry) sceneObject.geometry.dispose();
+
+    // Remove materials to free GPU resources
+    if (sceneObject.material) {
+      if (sceneObject.material instanceof Array) {
+        sceneObject.material.forEach((material) => {
+          console.log('materialText', material);
+        });
+      }
+    }
+
+
+    // Remove object from scene
+    // scene.remove(sceneObject); // OR sceneObject.removeFromParent()
+    // scene.clear();
+
+    // renderer.renderLists.dispose();
+    // renderer.forceContextLoss();
+    // renderer.domElement = null;
+    // renderer.dispose();
+    // renderer = null;
+    // scene = null;
+    // camera = null;
+    // $(".scene").find('canvas').remove();
+
+  });
+}
+
+export function setFrame(pos) {
   loadFrames(frameList[pos], "main");
 }
-export function setTemple(temple){
+
+export function setTemple(temple) {
+ 
   gLTFLoader(temple);
+  //modelContainer.rotation.x = -1.600;
+  //modelContainer.rotation.y = 1.600;
+  modelContainer.rotation.z = 1.900
+  // modelContainer.zoomIn = 1.900
+
 }
-export function setTextView(){
-  textLoader();
+export function setTemplePos() {
+camera.updateProjectionMatrix();
+  modelContainer.rotation.y = 17.109999999999875;
+  modelContainer.rotation.z =6.19999999999913;
 }
 
-export function setFrontTexture(meterialName, img){
+
+// Engraving Name 
+
+// export function setTextView(){
+//   textLoader();
+// }
+
+export function setFrontTexture(meterialName, img) {
+  camera.zoom = 0.8;
   sceneTraverse(meterialName, img);
 }
-

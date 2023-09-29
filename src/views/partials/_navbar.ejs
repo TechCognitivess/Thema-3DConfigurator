@@ -1,21 +1,165 @@
-    <div id="navTab" class="customized_tabs">
-        <ul>
-            <li id="brandBtn" class="dropdown" style="height: auto;">Brands
-                <div id="dropdownContainer" class="dropdown-content" style="display: none;">
-                   <img src="/img/logo.png" alt=""
-                                >
-                    <img src="/img/OsixLogo.png" alt="">
-                    <img src="/img/gvLogo.jpg" alt="">
+<style>
+    #navTab span {
+        margin-right: 8px;
+        font-size: x-small;
+    }
+
+    .stepBystep {
+        width: 15px;
+        height: 15px;
+        background: #888;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .75rem;
+        margin-top: 0;
+        padding-top: 0;
+        border-radius: 50%;
+    }
+
+
+    .active .stepBystep {
+        background-color: #037b3f;
+        color: #fff;
+    }
+
+    .brandSelected::before {
+        background-color: green;
+        color: white;
+        width: 15px;
+        height: 15px;
+        content: '\2713';
+        /* position: absolute;
+        left: 25%; */
+        margin-right: 5px;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: x-small;
+        padding: 1px
+    }
+
+    .navigation.activeTick::before {
+        background-color: green;
+        color: white;
+        width: 15px;
+        height: 15px;
+        content: '\2713';
+        /* position: absolute;
+        left: 25%; */
+        margin-right: 5px;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: x-small;
+        padding: 1px
+    }
+
+    .activeTick .stepBystep {
+        display: none;
+    }
+</style>
+
+<div id="navTab" class="customized_tabs">
+    <ul>
+
+        <li id="brandBtn" class="dropdown brandSelected navigation osixNav" style="height: auto;">Brands
+
+            <div id="dropdownContainer" class="dropdown-content" style="display: none;">
+                <div class="logo_container">
+                    <a href="/home">
+
+                        <img class="igreenlogo" src="/img/logo.jpeg" alt="">
+                    </a>
                 </div>
-            </li>
+                <div class="logo_container">
+                    <a href="/o-six">
+                        <img class="Osixlogo" src="/img/OsixLogo.png" alt="">
 
-            <li id='frontBoxTab' class='navigation active'>Front</li>
-            <li id='colorBoxTab' class='navigation'>Color</li>
-            <li id='templesBoxTab' class='navigation'>Temples</li>
-            <li id='engravingBoxTab' class='navigation'>Engraving</li>
-            <li id='lensesBoxTab' class='navigation' style="display: none;">Lenses</li>
+                    </a>
+                </div>
 
-        </ul>
+                <div class="logo_container">
+                    <a href="/giorgio">
+                        <img class="gvlogo" src="/img/gvLogo.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li id='frontBoxTab' class='navigation osixTick active '>
+            <span class="stepBystep osixNav">1</span>Front</li>
+        <li id='colorBoxTab' class='navigation osixTick'><span class="stepBystep osixNav">2</span>Color</li>
+        <li id='templesBoxTab' class='navigation osixTick'><span class="stepBystep osixNav">3</span>Temples</li>
+        <li id='engravingBoxTab' class='navigation osixTick'><span class="stepBystep osixNav">4</span>Engraving</li>
+        <li id='lensesBoxTab' class='navigation osixTick' style="display: none;"><span
+                class="stepBystep osixNav">5</span>Lenses</li>
 
-        
-    </div>
+    </ul>
+
+    <div id="overlay"> </div>
+
+</div>
+
+<script>
+    // var isBrandBtn = false
+    var isFrontBoxTab = false;
+    var isColorBoxTab = false;
+    var isTemplesBoxTab = false;
+    var isEngravingBoxTab = false;
+    var isLensesBoxTab = false;
+    const tabs = document.querySelectorAll('.navigation');
+    // const leftSemiBottom = document.querySelector('.leftSemi_bottom'); 
+
+
+    function showTickMark(scene, isactive) {
+        if (isactive) {
+            // console.log("............." + '#' + tabs[scene].id)
+            $('#' + tabs[scene].id + ".navigation").addClass('activeTick')
+            // } else {
+            //     $('#'+tabs[scene].id).removeClass('active')
+            // }
+        }
+        // tabs.forEach((tab) => {
+        //     tab.classList.remove('active');
+        // });
+
+        // tabs[scene].classList.add('active');
+    }
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            let contentEdited = false;
+            contentEdited = true;
+            // console.log(isFrontBoxTab, isColorBoxTab, isTemplesBoxTab, isEngravingBoxTab,
+            //     isLensesBoxTab);
+
+            if (isFrontBoxTab) {
+                showTickMark(1, true);
+            } else {
+                showTickMark(1, false);
+            }
+            if (isColorBoxTab) {
+                showTickMark(2, true);
+            } else {
+                showTickMark(2, false);
+            }
+            if (isTemplesBoxTab) {
+                showTickMark(3, true);
+            } else {
+                showTickMark(3, false);
+            }
+            if (isEngravingBoxTab) {
+                showTickMark(4, true);
+            } else {
+                showTickMark(4, false);
+            }
+            if (isLensesBoxTab) {
+                showTickMark(5, true);
+            } else {
+                showTickMark(5, false);
+            }
+
+        });
+        // if (isFrontBoxTab && isColorBoxTab && isTemplesBoxTab && isEngravingBoxTab && isLensesBoxTab) {
+        //     leftSemiBottom.style.display = 'block';
+        // }
+    });
+</script>

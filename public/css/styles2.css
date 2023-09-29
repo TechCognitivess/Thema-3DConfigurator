@@ -9,10 +9,10 @@
     width: 100%;
     box-shadow: none;
 }
-.gridView .outer-grid.eyeglasses, .gridView .outer-grid.sunglasses{
+.gridView .outer-grid.NoEcoColor, .gridView .outer-grid.YesEcoColor{
     display: none;
 }
-.gridView .outer-grid.eyeglasses.active, .gridView .outer-grid.sunglasses.active{
+.gridView .outer-grid.NoEcoColor.active, .gridView .outer-grid.YesEcoColor.active{
     display: flex;
 }
 .search_tabs{
@@ -21,4 +21,12 @@
 }
 .gridView{
     margin-top: 25%;
+    background-color: white;
+    border-top-left-radius: 15px;
+    box-shadow: -1px -3px 4px 1px green;
+
+    
+}
+#lensesBoxTab .gridView{
+    margin-top: 10%;
 }
