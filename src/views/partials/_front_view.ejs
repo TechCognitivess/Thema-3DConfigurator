@@ -1,5 +1,5 @@
 <div id="frontBoxTab" class="sidebarView feature_boxes left_main_container active">
-  
+
     <!-----------------------------FRONT----------------------------------------------------->
     <div id="frontBox " class="feature_box frame_list content" style="display: block;">
 
@@ -41,39 +41,13 @@
             <div class="outer-grid">
                 <div class="inner-grid">
                     <% if(articles != null) { %>
-                        <% articles.forEach(function(article, index) { %>
-                            <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
-                            alt="<%- article.Code %>" data="0" />
-                        <% }) %>
-                        <% } else { %>
-                        No posts found.
-                        <% } %>
-
-
-                </div>
-                <div class="inner-grid">
-                    <% if(articles != null) { %>
-                        <% articles.forEach(function(article, index) { %>
-                            <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
-                            alt="<%- article.Code %>" data="0" />
-                        <% }) %>
-                        <% } else { %>
-                        No posts found.
-                        <% } %>
-
-
-                </div>
-                <div class="inner-grid">
-                    <% if(articles != null) { %>
-                        <% articles.forEach(function(article, index) { %>
-                            <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
-                            alt="<%- article.Code %>" data="0" />
-                        <% }) %>
-                        <% } else { %>
-                        No posts found.
-                        <% } %>
-
-
+                    <% articles.forEach(function(article, index) { %>
+                    <img src="https://storage.cloud.google.com/thema_bucket/3D-models/IGREENUSA/FRONT%20IMAGE/<%- article.SAP_model_code %>.png"
+                        alt="<%- article.Code %>" data="0" />
+                    <% }) %>
+                    <% } else { %>
+                    No posts found.
+                    <% } %>
                 </div>
 
             </div>

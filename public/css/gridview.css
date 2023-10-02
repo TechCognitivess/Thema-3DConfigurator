@@ -7,6 +7,7 @@
 
 #frontBoxTab .gridView .inner-grid {
    padding: 0 0px;
+   display: contents;
 }
 
 .gridView .inner-grid {

@@ -204,46 +204,22 @@
 
     </div>
     <div class="gridView o-six" id="imageContainer">
-        <!-- <img src="/img/Colors/PL0982.jpg" alt="Image for 45/49"><img src="/img/IG4.161C.png"
-                    alt="Image for 45/49"><img src="/img/IG4.162C.png" alt="Image for 45/49"><img
-                    src="/img/IG4.165C.png" alt="Image for 45/49"><img src="/img/IG4.166C.png"
-                    alt="Image for 45/49"><img src="/img/Colors/PL0982.jpg" alt="Image for 45/49"> -->
 
         <div class="outer-grid NoEcoColor active">
             <div class="inner-grid">
-                <img src="img/Colors/PL0982.jpg" />
-                <img src="img/Colors/PL0983.jpg" />
-                <img src="img/Colors/PL0984.jpg" />
-                <img src="img/Colors/PL0985.jpg" />
-                <img src="img/Colors/PL0987.jpg" />
+                <% if(articles != null) { %>
+                <% articles.forEach(function(article, index) { %>
+                <img src="http://173.255.119.18:4000/colors/category/solid
+                <%- article.SAP_model_code %>.png" alt="<%- article.Code %>" data="0" />
+
+                <% }) %>
+                <% } else { %>
+                No posts found.
+                <% } %>
 
 
             </div>
-            <div class="inner-grid">
-                <img src="img/Colors/PL0988.jpg" />
-                <img src="img/Colors/PL0989.jpg" />
-                <img src="img/Colors/PL0990.jpg" />
-                <img src="img/Colors/PL0993.jpg" />
-                <img src="img/Colors/PL1011.jpg" />
 
-
-            </div>
-            <div class="inner-grid">
-                <img src="img/Colors/PL1012_b.jpg" />
-                <img src="img/Colors/PL1012.jpg" />
-                <img src="img/Colors/PL1015.jpg" />
-                <img src="img/Colors/PL0982.jpg" />
-                <img src="img/Colors/PL0983.jpg" />
-
-            </div>
-            <div class="inner-grid">
-                <img src="img/Colors/PL1012_b.jpg" />
-                <img src="img/Colors/PL1012.jpg" />
-                <img src="img/Colors/PL1015.jpg" />
-                <img src="img/Colors/PL0982.jpg" />
-                <img src="img/Colors/PL0983.jpg" />
-
-            </div>
         </div>
 
         <div class="outer-grid YesEcoColor">
@@ -389,19 +365,3 @@
 
     /******************/
 </script>
-
-
-<!-- <script>
-    $(function () {
-        $("select").select2();
-        $("#HospitalName").change(function () {
-            var rel_ = $(this).find("option:selected").data("rel")
-            $("#DepartmentName").select2("val", ""); //remove any selected value
-            $("#DepartmentName").select2({
-                matcher: function (term, text, option) {
-                    return $(option[0].outerHTML).attr("value") == rel_
-                }
-            })
-        });
-    })
-</script> -->
