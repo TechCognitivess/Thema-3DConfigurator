@@ -4,7 +4,6 @@ var cors = require('cors');
 const app = express()
 const port = 3000
 
-
 // Static Files
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
