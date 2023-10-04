@@ -10,6 +10,13 @@
    display: contents;
 }
 
+#colorBoxTab  .gridView .inner-grid {
+   overflow: scroll;
+   height: 75vh;
+   overflow-x: hidden;
+
+}
+
 .gridView .inner-grid {
    flex: 20%;
    padding: 0 4px;
