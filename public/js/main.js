@@ -1,3 +1,5 @@
+/***************globel varaiable ***************/
+
 var meterialObj = "FRONTALE"
 $("#navTab ul li.navigation").click(function () {
   $("#navTab ul li").removeClass("active");
